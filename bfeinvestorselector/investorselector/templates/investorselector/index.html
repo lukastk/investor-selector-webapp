@@ -1,0 +1,40 @@
+{% load static %}
+
+<html>
+
+<head>
+  <title>BfE Investor Selector</title>
+
+  <link rel="stylesheet" type="text/css" href="{% static 'investorselector/style.css' %}">
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>Bridges for Enterprise - Investor Selector</h1>
+
+  <p>Welcome to the BfE Investor Selector web-app!</p>
+
+  <p>To use the application, type in a description of your company in the textbox
+    below, and press the <i>submit</i> button. We will then parse and analyze your
+    text, and match it with investors from our internal database. We will then
+    present a ranked list of the investors based on their suitability.</p>
+
+  <br/>
+
+  <h4>Company description</h4>
+
+  <div>
+    <textarea style="width:100%; height: 300px"></textarea>
+
+    <div>
+      <button style="float:right; margin-top: 10px">Submit</button>
+    </div>
+  </div>
+
+</div>
+
+</body>
+
+</html>

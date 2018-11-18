@@ -1,1 +1,0 @@
-/home/BFE/investor-selector-webapp/investorselector/investorselector/__init__.py

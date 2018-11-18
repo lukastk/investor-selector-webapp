@@ -25,7 +25,7 @@ SECRET_KEY = 'usk5_p*#g9ner6y0#9-cd@z0$_hmc4q%vvjz+929f#yh#izg!)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['bfe.pythonanywhere.com']
 
 
 # Application definition

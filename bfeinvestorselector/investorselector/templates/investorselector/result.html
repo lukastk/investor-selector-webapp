@@ -1,0 +1,51 @@
+{% load static %}
+
+<html>
+
+<head>
+  <title>BfE Investor Selector</title>
+
+  <link rel="stylesheet" type="text/css" href="{% static 'investorselector/style.css' %}">
+</head>
+
+<body>
+
+  <h1>Bridges for Enterprise - Investor Selector</h1>
+
+  <h2>Results</h2>
+
+  <div id="results-table">
+    <table>
+      <tr>
+        <th>Organisation</th>
+        <th>Similarity</th>
+        <th>Website</th>
+      </tr>
+
+      {% for org, web, sim in result %}
+
+      <tr>
+        <td>{{ org }}</td>
+
+        <td>{{ sim }}</td>
+
+        <td><a href="{{ web }}">Link</a></td>
+      </tr>
+
+      {% endfor %}
+    </table>
+
+    <form action="/investorselector">
+        <input style="float:right; margin-top: 10px" type="submit" value="Go back" />
+    </form>
+  </div>
+
+<div class="container">
+
+
+
+</div>
+
+</body>
+
+</html>

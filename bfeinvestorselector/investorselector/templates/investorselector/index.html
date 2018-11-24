@@ -25,12 +25,13 @@
 
   <h4>Company description</h4>
 
-  <div>
-    <textarea style="width:100%; height: 300px"></textarea>
-
-    <div>
-      <button style="float:right; margin-top: 10px">Submit</button>
-    </div>
+  <div id="description-form">
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <!-- <textarea id="description" name="description" style="width:100%; height: 300px"></textarea> -->
+        <input style="float:right; margin-top: 10px" type="submit" value="OK">
+    </form>
   </div>
 
 </div>

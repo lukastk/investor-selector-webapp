@@ -21,8 +21,16 @@ body {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
+    vertical-align: top;
 }
 
 #results-table tr:nth-child(even) {
     background-color: #dddddd;
+}
+
+.description-box {
+  padding-top: 20px;
+  display: none;
+  text-align: justify;
+  font-style: italic;
 }

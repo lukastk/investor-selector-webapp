@@ -20,7 +20,7 @@ def index(request):
             db = ti.db.sort_values("Similarity", ascending=False)
 
             sim_precentage = [ str(round(s*100, 2)) + "%" for s in db["Similarity"].tolist() ]
-            request.session['result'] = list(zip(db["Organisation"].tolist(), db["Website"].tolist(), sim_precentage))
+            request.session['result'] = list(zip(db["Organisation"].tolist(), db["Website"].tolist(), sim_precentage, db["AutoSummary"].tolist()))
 
             return HttpResponseRedirect('/investorselector/result')
 

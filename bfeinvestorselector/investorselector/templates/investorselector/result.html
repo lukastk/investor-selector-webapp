@@ -6,6 +6,20 @@
   <title>BfE Investor Selector</title>
 
   <link rel="stylesheet" type="text/css" href="{% static 'investorselector/style.css' %}">
+  <script src="{% static 'investorselector/jquery-3.3.1.min.js' %}"></script>
+
+  <script>
+    var togglebox = function(boxid) {
+      console.log("desc-" + boxid)
+      d = $("#desc-" + boxid).css("display");
+
+      if (d == "none") {
+        $("#desc-" + boxid).css("display", "block")
+      } else {
+        $("#desc-" + boxid).css("display", "none")
+      }
+    };
+  </script>
 </head>
 
 <body>
@@ -20,16 +34,24 @@
         <th>Organisation</th>
         <th>Similarity</th>
         <th>Website</th>
+        <th>Description</th>
       </tr>
 
-      {% for org, web, sim in result %}
+      {% for org, web, sim, desc in result %}
 
       <tr>
-        <td>{{ org }}</td>
+        <td width="60%">{{ org }}
+
+          <div class="description-box" id="desc-{{ forloop.counter }}">
+            {{ desc }}
+          </div>
+        </td>
 
         <td>{{ sim }}</td>
 
         <td><a href="{{ web }}">Link</a></td>
+
+        <td> <button onclick="togglebox({{ forloop.counter }})">See description</button> </td>
       </tr>
 
       {% endfor %}

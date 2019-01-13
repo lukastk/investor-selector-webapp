@@ -72,6 +72,10 @@ body {
     background-color: #dddddd;
 }
 
+.collapsetd {
+  vertical-align: middle;
+}
+
 .description-box {
   padding-top: 20px;
   display: none;

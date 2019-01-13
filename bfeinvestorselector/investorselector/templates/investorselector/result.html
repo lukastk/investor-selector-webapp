@@ -15,8 +15,10 @@
 
       if (d == "none") {
         $("#desc-" + boxid).css("display", "block")
+        $(".collapsetd").css("vertical-align", "top")
       } else {
         $("#desc-" + boxid).css("display", "none")
+        $(".collapsetd").css("vertical-align", "middle")
       }
     };
   </script>
@@ -59,9 +61,9 @@
 
           <td>{{ sim }}</td>
 
-          <td> <a href="{{ web }}" target="_blank"><button class="sbutton-slim">Go to site</button></a> </td>
+          <td class="collapsetd"> <a href="{{ web }}" target="_blank"><button class="sbutton-slim">Go to site</button></a> </td>
 
-          <td> <button class="sbutton-slim" onclick="togglebox({{ forloop.counter }})">See description</button> </td>
+          <td class="collapsetd"> <button class="sbutton-slim" onclick="togglebox({{ forloop.counter }})">See description</button> </td>
         </tr>
 
         {% endfor %}

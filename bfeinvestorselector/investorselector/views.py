@@ -15,7 +15,7 @@ def index(request):
         # check whether it's valid:
         if form.is_valid():
             desc = form.cleaned_data['description']
-            ti = TopicModelIndexer(folder_dir="./investorselector/index_models")
+            ti = TopicModelIndexer(folder_dir="/home/BFE/investor-selector-webapp/bfeinvestorselector/investorselector/index_models")
             ti.index_database(desc)
             db = ti.db.sort_values("Similarity", ascending=False)
 

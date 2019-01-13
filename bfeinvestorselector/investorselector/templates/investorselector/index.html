@@ -12,26 +12,34 @@
 
 <div class="container">
 
-  <h1>Bridges for Enterprise - Investor Selector</h1>
+  <div class="header">
+    <div id="bfetitle">
+      <a href="."><img src="{% static 'investorselector/bfelogo.webp' %}"></a>
+      <div>
+        <a href="."><span style="font-size: 30px">Bridges for Enterprise</span> <br>
+        Investor Selector</a>
+      </div>
+    </div>
+  </div>
 
-  <p>Welcome to the BfE Investor Selector web-app!</p>
+  <div class="content">
+    <p>Welcome to the <i>BfE Investor Selector.</i></p>
 
-  <p>To use the application, type in a description of your company in the textbox
-    below, and press the <i>submit</i> button. We will then parse and analyze your
-    text, and match it with investors from our internal database. We will then
-    present a ranked list of the investors based on their suitability.</p>
+    <p style="padding-bottom: 18px">To use the application, type in a description of your company in the textbox
+      below, and press the <i>submit</i> button. We will then parse and analyze your
+      text, and match it with investors from our internal database. We will then
+      present a ranked list of the investors based on their suitability.</p>
 
-  <br/>
+    <h4 style="padding-bottom: 10px;">Company description</h4>
 
-  <h4>Company description</h4>
-
-  <div id="description-form">
-    <form method="post">
-        {% csrf_token %}
-        {{ form }}
-        <!-- <textarea id="description" name="description" style="width:100%; height: 300px"></textarea> -->
-        <input style="float:right; margin-top: 10px" type="submit" value="OK">
-    </form>
+    <div id="description-form">
+      <form method="post">
+          {% csrf_token %}
+          {{ form }}
+          <!-- <textarea id="description" name="description" style="width:100%; height: 300px"></textarea> -->
+          <input class="sbutton" style="float:right; margin-top: 10px" type="submit" value="Submit">
+      </form>
+    </div>
   </div>
 
 </div>

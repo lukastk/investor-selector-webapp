@@ -24,49 +24,55 @@
 
 <body>
 
-  <h1>Bridges for Enterprise - Investor Selector</h1>
-
-  <h2>Results</h2>
-
-  <div id="results-table">
-    <table>
-      <tr>
-        <th>Organisation</th>
-        <th>Similarity</th>
-        <th>Website</th>
-        <th>Description</th>
-      </tr>
-
-      {% for org, web, sim, desc in result %}
-
-      <tr>
-        <td width="60%">{{ org }}
-
-          <div class="description-box" id="desc-{{ forloop.counter }}">
-            {{ desc }}
-          </div>
-        </td>
-
-        <td>{{ sim }}</td>
-
-        <td><a href="{{ web }}">Link</a></td>
-
-        <td> <button onclick="togglebox({{ forloop.counter }})">See description</button> </td>
-      </tr>
-
-      {% endfor %}
-    </table>
-
-    <form action="/investorselector">
-        <input style="float:right; margin-top: 10px" type="submit" value="Go back" />
-    </form>
+  <div class="header">
+    <div id="bfetitle">
+      <a href="."><img src="{% static 'investorselector/bfelogo.webp' %}"></a>
+      <div>
+        <a href="."><span style="font-size: 30px">Bridges for Enterprise</span> <br>
+        Investor Selector</a>
+      </div>
+    </div>
   </div>
 
-<div class="container">
+  <div class="content">
 
+    <h2 style="padding-bottom: 10px;">Results</h2>
 
+    <div id="results-table">
+      <table>
+        <tr>
+          <th>Organisation</th>
+          <th>Similarity</th>
+          <th>Website</th>
+          <th>Description</th>
+        </tr>
 
-</div>
+        {% for org, web, sim, desc in result %}
+
+        <tr>
+          <td width="60%">{{ org }}
+
+            <div class="description-box" id="desc-{{ forloop.counter }}">
+              {{ desc }}
+            </div>
+          </td>
+
+          <td>{{ sim }}</td>
+
+          <td> <a href="{{ web }}" target="_blank"><button class="sbutton-slim">Go to site</button></a> </td>
+
+          <td> <button class="sbutton-slim" onclick="togglebox({{ forloop.counter }})">See description</button> </td>
+        </tr>
+
+        {% endfor %}
+      </table>
+
+      <form action="/investorselector">
+          <input class="sbutton" style="float:right; margin-top: 10px; margin-bottom: 25px;" type="submit" value="Go back" />
+      </form>
+    </div>
+
+  </div>
 
 </body>
 
